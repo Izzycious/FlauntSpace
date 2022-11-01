@@ -1,0 +1,64 @@
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: rgb(110, 90, 90);
+  color: #fff;
+  padding: 0 2rem;
+  width: 100%;
+    box-shadow: 0 10px 20px rgba(82, 71, 71, 0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+.logo {
+  font-weight: 800;
+  color: #fff;
+  font-size: 1.8rem;
+}
+.btn-signin {
+   box-sizing: border-box;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #000;;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+  display: -webkit-box;
+  display: flex;
+  align-self: center;
+  font-size: 1.2rem;
+  line-height: 1;
+  margin: 20px;
+  font-weight: 700;
+  padding: 1.2rem;
+    width: 14rem;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  text-align: center;
+  font-family: inherit;
+  user-select: none;
+  color: #000;
+  background-color: #353430;  
+}
+
+.btn-signin:hover {
+  background-color: #353430;
+  color: #000;  
+}
