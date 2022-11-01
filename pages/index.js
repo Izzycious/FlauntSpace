@@ -37,3 +37,28 @@ export default function Home() {
     </div>
   );
 }
+
+export const getServerSideProps = async ({ req, res }) => {
+  const { isAuthenticated, username } = await authorize(req);
+
+  if (isAuthenticated && username) {
+    const xata = getXataClient();
+
+    const todos = await xata.db.items
+      .filter("user.username", username)
+      .getMany();
+
+    return {
+      props: {
+        todos,
+      },
+    };
+  } else {
+    res.writeHead(401, {
+      "WWW-Authenticate": "Basic realm='This is a private to-do list'",
+    });
+
+    res.end();
+    return {};
+  }
+};
