@@ -23,7 +23,7 @@
 }
 
 .avatar {
-  border-radius: 10px;
+  border-radius: 50%;
   width: 300px;
   height: 300px;
   object-fit: cover;
@@ -36,4 +36,29 @@
   justify-content: center;
   flex-wrap: wrap;
   max-width: 800px;
+}
+.vertical {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+.button {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.newspaper {
+  column-count: 2;
+  column-gap:  40px;
+  column-rule-style: solid;
+  column-rule-width: 1px;
 }
