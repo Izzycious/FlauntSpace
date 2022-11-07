@@ -1,7 +1,7 @@
 {
   "databaseURL": "https://ishaq-Nasir-s-workspace-1s3lvk.us-east-1.xata.sh/db/FlauntSpace",
   "codegen": {
-    "output": "utils/xata.js",
+    "output": "src/xata.js",
     "moduleType": "esm",
     "declarations": true
   }
