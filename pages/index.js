@@ -12,38 +12,38 @@ export default function Home() {
   // const [error, updateError] = useState();
 
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>FlauntSpace</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <Header />
+    <>
+      <div className={styles.container}>
+        <Head>
+          <title>FlauntSpace</title>
+          <link rel="icon" href="/favicon.ico" />
+        </Head>
+        <Header />
+      </div>
       <main className={styles.main}>
         <div className={styles.user}>
           {loading && <div className={styles.title}>Loading...</div>}
-          <div className="content">
-            <div className={styles.profile}>
-              Welcome
-              {session && (
+          {session && (
+            <div className={styles.content}>
+              <div className={styles.profile}>
                 <>
                   <p>
                     You're logged in as
                     {session.user.name ?? session.user.email}
                   </p>
+                  <form className={styles.post}>
+                    <Post />
+                  </form>
                 </>
-              )}
+              </div>
+              <div className={styles.uploadsec}>
+                <ImageUpload />
+              </div>
             </div>
-          </div>
-
-          {!session && (
-            <>
-              <p className={styles.title}>SIGN IN TO FLAUNT</p>
-              {/* <img src="" alt="" className={styles.avatar} /> */}
-            </>
           )}
         </div>
       </main>
-    </div>
+    </>
   );
 }
 
