@@ -4,6 +4,7 @@ import styles from "../styles/Home.module.css";
 import { useSession } from "next-auth/react";
 import { ImageUpload } from "../components/uploadWidget";
 import { Post } from "../components/post";
+import { getXataClient } from "../utils/xata";
 
 export default function Home() {
   const { data: session, status } = useSession();
@@ -37,6 +38,11 @@ export default function Home() {
                 </>
               </div>
               <div className={styles.uploadsec}>
+                <img
+                  src="https://res.cloudinary.com/dhpp7gaty/image/upload/v1667560004/Profile-uploads/jnbkgndxzlnhapxv8eed.jpg"
+                  alt="upload here"
+                  className={styles.imageCloud}
+                />
                 <ImageUpload />
               </div>
             </div>
@@ -47,27 +53,24 @@ export default function Home() {
   );
 }
 
-// export const getServerSideProps = async ({ req, res }) => {
-//   const { isAuthenticated, username } = await authorize(req);
+export const getServerSideProps = async ({ req, res }) => {
+  const { isAuthenticated, username } = await authorize(req);
 
-//   if (isAuthenticated && username) {
-//     const xata = getXataClient();
+  if (isAuthenticated) {
+    const xata = getXataClient();
+    const todos = await xata.db.items
+      .filter("user.username", username)
+      .getMany();
 
-//     const todos = await xata.db.items
-//       .filter("user.username", username)
-//       .getMany();
-
-//     return {
-//       props: {
-//         todos,
-//       },
-//     };
-//   } else {
-//     res.writeHead(401, {
-//       "WWW-Authenticate": "Basic realm='This is a private to-do list'",
-//     });
-
-//     res.end();
-//     return {};
-//   }
-// };
+    return {
+      props: {
+        todos,
+      },
+    };
+  } else {
+    res.writeHead(401, {
+      "WWW-Authenticate": "Basic realm='This is a private to-do list'",
+    });
+    return { redirect: { destination: "/", permanent: false } };
+  }
+};

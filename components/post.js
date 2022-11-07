@@ -7,15 +7,13 @@ export function Post() {
       <label htmlFor="body-content" className={styles.flauntText}>
         Flaunt
       </label>
-      <input
-        className={styles.bodyText}
-        type="text"
-        id="body-content"
-        name="body-content"
-        required
-      />
+      <textarea rows="4" cols="50" className={styles.bodyText}>
+        Enter text here...
+      </textarea>
       <br />
-      <button type="submit">Post</button>
+      <button type="submit" className={styles.postbut}>
+        Post
+      </button>
     </form>
   );
 }

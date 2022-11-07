@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
-@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Island+Moments&display=swap');
 .container {
   min-height: 10vh;
   display: flex;
@@ -74,7 +73,30 @@
   display: flex;
 }
 .flauntText {
-  text-decoration: dotted;
-  text-shadow: #ccc;
-  text-size-adjust: 10px;
+  font-family: 'Island Moments', cursive;
+  font-weight: bold;
+  font-size: 40px;
+}
+
+.postbut {
+  background-color: #449a79; /* Green */
+  border-radius: 10px;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;  
+}
+
+.imageCloud {
+  /*border: 5px solid #555;*/
+  border-radius: 50%;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  border: 3px solid black;
 }
