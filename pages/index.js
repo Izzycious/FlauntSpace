@@ -1,7 +1,6 @@
 import Head from "next/head";
 import Header from "../components/Header";
 import styles from "../styles/Home.module.css";
-
 import { useSession } from "next-auth/react";
 import { ImageUpload } from "../components/uploadWidget";
 import { Post } from "../components/post";
@@ -22,25 +21,20 @@ export default function Home() {
       <main className={styles.main}>
         <div className={styles.user}>
           {loading && <div className={styles.title}>Loading...</div>}
-          {session && (
-            <>
-              <div className={styles.card}>
-                <p className="">
-                  You're logged in as {session.user.name ?? session.user.email}
-                </p>
-                <div className={styles.row}>
-                  <div className={styles.avatar}>
-                    <div className="photo">
-                      <img
-                        src="https://picsum.photos/200"
-                        className={styles.profileimg}
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </>
-          )}
+          <div className="content">
+            <div className={styles.profile}>
+              Welcome
+              {session && (
+                <>
+                  <p>
+                    You're logged in as
+                    {session.user.name ?? session.user.email}
+                  </p>
+                </>
+              )}
+            </div>
+          </div>
+
           {!session && (
             <>
               <p className={styles.title}>SIGN IN TO FLAUNT</p>
