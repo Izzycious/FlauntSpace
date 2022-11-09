@@ -23,15 +23,19 @@ export default function Home() {
       </div>
       <main className={styles.main}>
         <div className={styles.user}>
-          {loading && <div className={styles.title}>Loading...</div>}
+          {loading && <div className={styles.title}>Loading...</div>}{" "}
+          {/*authentication process */}
+          {/**Renders the home page after authentication passed of third-party */}
           {session && (
             <div className={styles.content}>
               <div className={styles.profile}>
                 <>
                   <p>
                     You're logged in as
+                    {/**Get's the name and mail from the third-party nextauth and display it as the user name on the home page */}
                     {session.user.name ?? session.user.email}
                   </p>
+                  {/**SPLIT spage to two section where one is for the upload preset and the other is for posting blog post */}
                   <form className={styles.post}>
                     <Post />
                   </form>
