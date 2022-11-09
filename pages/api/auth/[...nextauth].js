@@ -21,4 +21,8 @@ const options = {
   ],
 };
 
+{
+  /**Docs from nextAuth on third-party authentication */
+}
+
 export default (req, res) => NextAuth(req, res, options);

@@ -4,6 +4,9 @@ import Link from "next/link";
 export default function Header() {
   const handleSignin = (e) => {
     e.preventDefault();
+    {
+      /**This handle the buttons of the login and signout */
+    }
     signIn();
   };
 

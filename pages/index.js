@@ -56,6 +56,9 @@ export default function Home() {
     </>
   );
 }
+{
+  /**Connecting the xata to our app */
+}
 const xata = new XataClient();
 export const getServerSideProps = async () => {
   const FlauntSpace = await xata.db.items.getAll();
