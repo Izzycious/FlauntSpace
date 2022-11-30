@@ -9,6 +9,5 @@ const handler = async (req, res) => {
     link,
   });
   res.end();
-  //   console.log(record);
 };
 export default handler;
