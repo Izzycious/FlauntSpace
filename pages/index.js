@@ -9,7 +9,6 @@ import { getXataClient, XataClient } from "../src/xata";
 export default function Home() {
   const { data: session, status } = useSession();
   const loading = status === "loading";
-  //
 
   return (
     <>
